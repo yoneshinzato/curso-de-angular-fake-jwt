@@ -9,12 +9,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post("/sign", (req, res) => {
-  const email = "dener@vidafullstack.com.br";
+  const email = "chibariyo@gmail.com";
   const password = "123";
 
   if (req.body.email === email && req.body.password === password) {
     const data = {
-      nome: "Dener Troquatte",
+      nome: "Yone Shinzato",
       email,
       role: ["sysAdmin"],
     };
@@ -23,7 +23,7 @@ app.post("/sign", (req, res) => {
       expiresIn: 100000,
     });
 
-    return res.json({ token: token });
+    return res.json({ token });
   }
 
   res.status(500).json({ message: "Usuário ou senha incorreta" });
